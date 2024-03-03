@@ -119,7 +119,25 @@ function writeToFile(fileName, data) {
 
 
 // TODO: Create a function to initialize app
-function init() {}
+function init() {
+    return inquirer.prompt(questions)
+    .then(readmeData => {
+        return readmeData;
+    })
+}
 
 // Function call to initialize app
-init();
+init()
+.then(readmeData => {
+    console.log(readmeData);
+    return generateMarkdown(readmeData);
+})
+.then(pageMD => {
+    return writeToFile(pageMD);
+})
+.then(writeToFileResponse => {
+    console.log(writeToFileResponse.message);
+})
+.catch(err => {
+    console.log(err);
+});
