@@ -23,7 +23,7 @@
 
   ## [Usage](#table-of-contents)
 
-  Follow examples in my repository.
+  Follow the examples on my repository.
   
   
     ## [License](#table-of-contents)
