@@ -61,7 +61,7 @@ const questions = [
         type: 'list',
         name: 'license',
         message: 'Which license will you use for your project?',
-        choices: ['agpl', 'apache', 'MIT', 'No License']
+        choices: ['AGPL', 'Apache', 'MIT', 'No License']
     },
     {
         type: 'confirm',
@@ -135,8 +135,8 @@ init()
 .then(pageMD => {
     return writeToFile(pageMD);
 })
-.then(writeToFileResponse => {
-    console.log(writeToFileResponse.message);
+.then(writeFileResponse => {
+    console.log(writeFileResponse.message);
 })
 .catch(err => {
     console.log(err);
